@@ -1,0 +1,157 @@
+/* ForexmapComponent.module.css */
+
+.forexmap {
+  padding: 20px;
+  background-color: #1b1f22; 
+}
+
+.mapContainer {
+  width: 100%;
+  height: 80vh;
+}
+
+.composableMap {
+  width: 100%;
+  height: auto; 
+}
+
+.markerCircle {
+  fill: #91C43B; 
+  stroke: #FFFFFF; 
+  stroke-width: 1; 
+}
+
+.text {
+  fill: #ffffff; 
+  font-size: 12px;
+}
+
+.foreignObject {
+  overflow: visible;
+}
+
+.timeBox {
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+.statusOpen {
+  color: #91C43B;
+}
+
+.statusClosed {
+  color: #FF0000; 
+}
+
+.countdownContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.countdownBox {
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 20px; 
+  text-align: center;
+  font-size: 16px; 
+  width: 200px; 
+  margin: 10px; 
+}
+
+.countdownStatusOpen {
+  color: #91C43B; 
+}
+
+.countdownStatusClosed {
+  color: #FF0000; 
+}
+
+.dayName {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.title {
+  text-align: left;
+  margin-left: 0; 
+  max-width: 600px;
+}
+
+h1 {
+  color: white;
+  font-size: 2rem; /* Match FinancialnewsComponent */
+  margin: 0; /* Remove default margin */
+  font-weight: bold; /* Make title bold */
+  line-height: 1.2; /* Adjust line-height for consistency */
+}
+
+h1 .smart {
+  color: white; /* White color for SMART */
+}
+
+h1 .forex {
+  color: white; /* Green color for FOREX */
+}
+
+h1 .screen {
+  color: #91C43B; /* White color for SCREEN */
+}
+
+.greentext {
+  color: #91C43B;
+}
+
+@media (max-width: 1200px) {
+  .countdownBox {
+    width: 180px;
+    font-size: 14px; 
+  }
+  
+  h1 {
+    font-size: 40px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .countdownBox {
+    width: 160px;
+    font-size: 12px; 
+  }
+
+  .title {
+    text-align: center; 
+  }
+
+  h1 {
+    font-size: 35px; 
+  }
+
+  .mapContainer {
+    height: 60vh; 
+  }
+}
+
+@media (max-width: 480px) {
+  .countdownBox {
+    width: 140px;
+    font-size: 10px; 
+    padding: 10px; 
+  }
+
+  h1 {
+    font-size: 30px; 
+  }
+
+  .mapContainer {
+    height: 20vh; 
+  }
+}
