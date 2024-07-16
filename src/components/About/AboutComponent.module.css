@@ -1,0 +1,91 @@
+/* AboutComponent.module.css */
+
+body {
+    margin: 0;
+}
+
+h1 {
+    color: white;
+    font-size: 2rem; /* Match FinancialnewsComponent */
+    margin: 0; /* Remove default margin */
+    font-weight: bold; /* Make title bold */
+    line-height: 1.2; /* Adjust line-height for consistency */
+}
+
+h1 .who {
+    color: white; /* White color for WHO */
+}
+
+h1 .are {
+    color: #91C43B; /* Green color for ARE */
+}
+
+section {
+    padding: 0;
+    margin: 0; 
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.about {
+    text-align: left;
+    padding: 80px 50px; 
+    margin-left: 0; 
+    max-width: 600px;
+}
+
+.greentext {
+    color: #91C43B;
+}
+
+.paragraph {
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .about {
+        padding: 60px 40px;
+    }
+
+    .paragraph {
+        max-width: 90%; 
+    }
+}
+
+@media (max-width: 992px) {
+    .about {
+        padding: 50px 30px;
+    }
+
+    .paragraph {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 40px 20px;
+    }
+
+    .paragraph {
+        font-size: 16px;
+        max-width: 50%; 
+    }
+}
+
+@media (max-width: 576px) {
+    .about {
+        padding: 30px 10px;
+    }
+
+    .paragraph {
+        font-size: 14px;
+        max-width: 50%;
+    }
+}

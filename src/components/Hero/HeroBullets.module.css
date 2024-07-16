@@ -1,0 +1,138 @@
+*{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hero {
+  position: relative;
+  background-image: url('./backgrounda.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 90vh;
+  display: grid;
+  align-items: center; /* Vertical center */
+  overflow: hidden; /* Ensure content below animates in properly */
+}
+
+.content {
+  max-width: rem(800px);
+  margin-right: 790px;
+  opacity: 0;
+  transform: translateY(100px); /* Start position offscreen */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Animation transition */
+
+  @media (max-width: $mantine-breakpoint-md) {
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+
+
+
+.content.show {
+  opacity: 1;
+  transform: translateY(0); /* End position onscreen */
+}
+
+
+
+
+.title {
+  letter-spacing: 1px;
+  color: var(--mantine-color-white);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: rem(65px);
+  line-height: 1.1;
+  font-weight: 800;
+  width: 500px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    font-size: rem(28px);
+  }
+}
+
+.title.visible {
+  opacity: 1;
+}
+
+
+
+.control {
+  @media (max-width: $mantine-breakpoint-xs) {
+    flex: 1;
+  }
+}
+
+.marketIndicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: #2a2c2e;
+  color: white;
+  font-size: 14px;
+}
+
+.marketIndicator:hover {
+  background-color: #424242;
+}
+
+.marketIndicator img {
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+}
+
+.marketIndicator .symbol {
+  font-size: large;
+  font-weight: bold;
+}
+
+.marketIndicator .change {
+  font-weight: bold;
+  font-size: large; /* Example of adjusting font size */
+}
+
+.startText {
+  font-weight: bold;
+  font-size: larger;
+  width: 500px;
+}
+
+
+.animatedArrow {
+  position: absolute;
+  bottom: 0px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 40px;
+  animation: bounce 2s infinite alternate;
+  opacity: 90%;
+  
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+
+.highlight {
+  position: relative;
+  background-color: rgba(173, 70, 23, 0.300);
+  border-radius: 20px 10px 15px 40px;
+  padding: rem(4px) rem(12px);
+}
+
+

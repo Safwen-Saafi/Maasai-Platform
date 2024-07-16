@@ -1,0 +1,78 @@
+
+.header {
+  justify-content: space-between; 
+  height: rem(66px);
+  background-color: black;
+}
+
+.inner {
+  height: rem(66px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  display: block;
+  line-height: 1;
+  padding: rem(8px) rem(12px);
+  border-radius: var(--mantine-radius-sm);
+  text-decoration: none;
+  color: white;
+  font-size: calc(var(--mantine-font-size-sm) * 1.1);
+  font-weight: 500;
+
+  @mixin hover {
+    background-color: var(--mantine-color-dark-6);
+  }
+}
+
+.linkLabel {
+  margin-right: rem(5px);
+}
+.link:hover {
+  transform: scale(1.1);
+  background-color: #141516;
+}
+
+
+
+
+.right{
+  display: flex;
+  align-items: center;
+  gap: 18px; 
+}
+
+.butt {
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.butt:hover {
+  transform: scale(1.1); /* Example hover effect: scale up the avatar */
+}
+
+
+/* HeaderMenu.module.css */
+
+.menuDropdown {
+
+  background-color: #1f1f1f;
+  border: #141516; /* Custom background color */
+  /* Custom minimum width */
+}
+
+.menuItem:hover {
+  background-color: #424242;
+}
+
+
+.menuItem {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 20px; /* Custom padding */
+}
+
+.linkLabel {
+  font-size: 16px; /* Adjust link label size if needed */
+}

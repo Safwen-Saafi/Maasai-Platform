@@ -1,0 +1,54 @@
+.tank{
+  background-color: #110e0ede;
+}
+
+
+
+.badg{
+  padding: 20px;
+  font-size: 22px;
+  font-weight: 500;
+  border: #110e0ede;
+}
+
+.title {
+  font-family: Trebuchet MS;
+    font-size: rem(75px);
+
+  
+    @media (max-width: $mantine-breakpoint-sm) {
+      font-size: rem(24px);
+    }
+  }
+  
+  .description {
+    max-width: rem(600px);
+    margin: auto;
+  
+    &::after {
+      content: '';
+      display: block;
+      background-color: orange;
+      width: rem(45px);
+      height: rem(2px);
+      margin-top: var(--mantine-spacing-sm);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  .card {
+    border: rem(1px) solid var(--mantine-color-dark-5);
+  }
+  
+  .cardTitle {
+    &::after {
+      content: '';
+      display: block;
+      background-color: orange;
+      width: rem(45px);
+      height: rem(2px);
+      margin-top: var(--mantine-spacing-sm);
+    }
+  }
+

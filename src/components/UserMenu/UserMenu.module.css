@@ -1,0 +1,26 @@
+
+.ava {
+    transform: scale(1.1); /* Default scale */
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+  
+  .ava:hover {
+    transform: scale(1.2); /* Scale up a bit more on hover */
+    background-color: #ff7300b2; /* Change background color on hover */
+  }
+  
+  .menuDropdown {
+    background-color: #1f1f1f; /* Default background color */
+    border-radius: 10px;
+    border: #1f1f1f;
+    font-weight: 500;
+  }
+  
+  .menuItem {
+    transition: background-color 0.3s ease;
+  }
+  
+  .menuItem:hover {
+    background-color: #424242; /* Background color on hover */
+  }
+  
