@@ -47,7 +47,8 @@ export function FeaturesCards() {
       key={feature.title} 
       shadow="md" 
       radius="md" 
-      className={classes.card} 
+      className={classes.card}
+      color='white' 
       padding="xl"
       style={{ backgroundColor: feature.backgroundColor }} // Apply background color
     >
