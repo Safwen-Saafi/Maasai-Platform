@@ -4,6 +4,8 @@ import { FeaturesCards } from '@/components/Features/FeaturesCard';
 import { FooterLinks } from '@/components/Footer/FooterLinks';
 import { HeaderMenu } from '@/components/Header/HeaderMenu';
 import { HeroBullets } from '@/components/Hero/HeroBullets';
+import InfiniteSlider from '@/components/InfiniteSlider/InfiniteSlider';
+import Install from '@/components/Install/Install';
 import FinancialnewsComponent from '@/components/News/FinancialnewsComponent';
 import SmartforexscreenComponent from '@/components/SmartForexScreen/SmartforexscreenComponent';
 import AdvancedChart from '@/components/SymbolOverviewChart/AdvancedChart';
@@ -19,7 +21,10 @@ export function HomePage() {
       <Wave />
       <FeaturesCards />
       <Waves />
+      <InfiniteSlider/>
+      <Install/>
       <FooterLinks />
+
     </>
   );
 }
