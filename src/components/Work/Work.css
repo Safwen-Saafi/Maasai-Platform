@@ -1,0 +1,128 @@
+/* Container for the whole section */
+.work-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 90vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    position: relative;
+    background-color: black;
+}
+
+/* Header styles */
+.header {
+    margin-top: -200px;
+    text-align: center; /* Center header text */
+    margin-bottom: 3.5rem; /* Space below the header */
+}
+
+/* Title styling */
+.title {
+    color: #ffffff;
+    font-size: 8rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+
+/* Grid container for the cards */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35px, 1fr)); /* Adjusted min-width */
+    gap: 3.5rem; /* Reduced gap between items */
+    justify-content: center; /* Center grid items horizontally */
+    max-width: 1500px; /* Max width for better alignment */
+    margin: 0 auto; /* Center grid container horizontally */
+}
+
+/* Card styles */
+.card {
+    padding: 2rem;
+    position: relative;
+    border: 2px solid #3b3b3b;
+    border-radius: 30px;
+    background-color: #111010;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, max-height 0.2s ease; /* Refined transition properties */
+    width: 400px; /* Increased width for each card */
+    height: 300px; /* Increased height for each card */
+    transform: scale(1); /* Initial scale */
+    transform-origin: center; /* Ensure scaling is centered */
+}
+
+.card:hover {
+    max-height: 500px; /* Expanded max height to display full text */
+    transform: scale(1.1); /* Slightly upscale on hover */
+}
+
+/* Image background styling */
+.work-img-bg {
+    background: #5a1b06; /* Gradient from yellow to orange to green to purple */
+    border-radius: 50%;
+    border: 2px solid #f57600;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.work-img {
+    width: 44px;
+    height: 44px;
+}
+
+.arrow-img {
+    width: 85px;
+    height: 35px;
+}
+
+/* Heading styling */
+.heading {
+    color: #f8f8ff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Subheading styling */
+.subheading {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* Hidden paragraph container styling */
+.hiddenpara-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0s ease; /* Faster transition */
+}
+
+.card:hover .hiddenpara-container {
+    max-height: 50px; /* Adjust this value based on the content length */
+}
+
+.hiddenpara {
+    color: #ffffff5e;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+
+.highlight {
+    position: relative;
+    background-color: rgba(212, 85, 11, 0.3);
+    border-radius: 40px 60px 15px 80px;
+    padding: rem(4px) rem(12px);
+  }
+  

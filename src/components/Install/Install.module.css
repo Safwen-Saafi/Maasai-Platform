@@ -1,7 +1,7 @@
 .color{
     width: 800px;
     height: 700px;
-    background-image: radial-gradient(closest-side, rgba(204, 201, 6, 0.137), #e100ff00);
+    background-image: radial-gradient(closest-side, rgba(171, 6, 204, 0.137), #e100ff00);
     position: absolute;
     top: -50px;
     left: 40%;

@@ -1,0 +1,240 @@
+/* HeaderMenu.module.css */
+
+.header {
+  justify-content: space-between; 
+  height: rem(66px);
+  background-color: black;
+}
+
+.inner {
+  height: rem(66px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  display: block;
+  line-height: 1;
+  padding: rem(8px) rem(12px);
+  border-radius: var(--mantine-radius-sm);
+  text-decoration: none;
+  color: white;
+  font-size: calc(var(--mantine-font-size-sm) * 1.1);
+  font-weight: 500;
+
+  @mixin hover {
+    background-color: var(--mantine-color-dark-6);
+  }
+}
+
+.linkLabel {
+  margin-right: rem(5px);
+}
+
+.link:hover {
+  transform: scale(1.1);
+  background-color: #141516;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 18px; 
+}
+
+.butt {
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.butt:hover {
+  transform: scale(1.1); /* Example hover effect: scale up the avatar */
+}
+
+.menuDropdown {
+  background-color: #1f1f1f;
+  border: #141516; /* Custom background color */
+  /* Custom minimum width */
+}
+
+.menuDropdownRight {
+  background-color: #1f1f1f;
+  border: #141516; /* Custom background color */
+  left: 100%; /* Position to the right */
+  top: 0;
+}
+
+.menuItem:hover {
+  background-color: #424242;
+}
+
+.menuItem {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 20px; /* Custom padding */
+}
+
+.menuItemWithSubmenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.linkLabel {
+  font-size: 16px; /* Adjust link label size if needed */
+}
+
+
+
+
+
+
+
+import { Menu, Group, Center, Burger, Container, Button, Avatar } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { IconChevronDown, IconChevronRight } from '@tabler/icons-react';
+import { MantineLogo } from '@mantinex/mantine-logo';
+import classes from './HeaderMenu.module.css';
+import { UserMenu } from '../UserMenu/UserMenu';
+import { LanguagePicker } from '../LanguagePicker/LanguagePicker';
+
+interface LinkItem {
+  link: string;
+  label: string;
+  links?: LinkItem[];
+}
+
+const links: LinkItem[] = [
+  {
+    link: '#1',
+    label: 'Charts',
+    links: [
+      { link: '/docs', label: 'Live Chart' },
+      { link: '/resources', label: 'Demo Chart' },
+    ],
+  },
+  {
+    link: '#2',
+    label: 'Markets',
+    links: [
+      { link: '/faq', label: 'Equity Index' },
+      { link: '/demo', label: 'FX' },
+      { link: '/forums', label: 'Metals' },
+    ],
+  },
+  {
+    link: '#3',
+    label: 'Strategy',
+    links: [
+      { link: '/faq', label: 'Sentiments' },
+      { link: '/demo', label: 'Market Structure' },
+      {
+        link: '#nested',
+        label: 'More',
+        links: [
+          { link: '/nested-1', label: 'Relative Value' },
+          { link: '/nested-2', label: 'Initial Range' },
+          { link: '/nested-3', label: 'Z Score' },
+        ],
+      },
+    ],
+  },
+  { link: '/about', label: 'News' },
+  { link: '/about', label: 'About' },
+];
+
+export function HeaderMenu() {
+  const [opened, { toggle }] = useDisclosure(false);
+
+  const renderMenuItems = (items: LinkItem[]) => {
+    return items.map((item) => {
+      if (item.links) {
+        return (
+          <Menu key={item.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
+            <Menu.Target>
+              <div className={classes.menuItemWithSubmenu}>
+                <span>{item.label}</span>
+                <IconChevronRight size="0.9rem" stroke={1.9} />
+              </div>
+            </Menu.Target>
+            <Menu.Dropdown className={classes.menuDropdownRight}>
+              {renderMenuItems(item.links)}
+            </Menu.Dropdown>
+          </Menu>
+        );
+      }
+
+      return (
+        <Menu.Item key={item.link} className={classes.menuItem}>
+          {item.label}
+        </Menu.Item>
+      );
+    });
+  };
+
+  const items = links.map((link) => {
+    if (link.links) {
+      return (
+        <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
+          <Menu.Target>
+            <a
+              href={link.link}
+              className={classes.link}
+              onClick={(event) => event.preventDefault()}
+            >
+              <Center>
+                <span className={classes.linkLabel}>{link.label}</span>
+                <IconChevronDown size="0.9rem" stroke={1.9} />
+              </Center>
+            </a>
+          </Menu.Target>
+          <Menu.Dropdown className={classes.menuDropdown}>
+            {renderMenuItems(link.links)}
+          </Menu.Dropdown>
+        </Menu>
+      );
+    }
+
+    return (
+      <a
+        key={link.label}
+        href={link.link}
+        className={classes.link}
+        onClick={(event) => event.preventDefault()}
+      >
+        {link.label}
+      </a>
+    );
+  });
+
+  return (
+    <header className={classes.header}>
+      <Container size="xl">
+        <div className={classes.inner}>
+          <MantineLogo size={28} />
+          <Group gap={10} visibleFrom="sm">
+            {items}
+          </Group>
+          <div className={classes.right}>
+            <LanguagePicker />
+            <UserMenu />
+            <Button
+              size="md"
+              variant="gradient"
+              gradient={{ from: 'yellow', to: 'red', deg: 150 }}
+              className={classes.butt}
+            >
+              Get Started
+            </Button>
+          </div>
+          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
+        </div>
+      </Container>
+    </header>
+  );
+}
+
+
+
+
+
