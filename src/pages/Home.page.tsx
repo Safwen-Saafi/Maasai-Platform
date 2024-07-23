@@ -1,4 +1,5 @@
 import AboutComponent from '@/components/About/AboutComponent';
+import Blur from '@/components/Blurred/Blur';
 import { GetInTouch } from '@/components/ContactUs/GetInTouch';
 import Doc from '@/components/Docu/Doc';
 import { FeaturesCards } from '@/components/Features/FeaturesCard';
@@ -27,7 +28,7 @@ export function HomePage() {
       <Install/>
       <Work/>
       <Doc/>
-      <AdvancedChart/>
+      <Blur/>
       <FooterLinks />
     </>
   );

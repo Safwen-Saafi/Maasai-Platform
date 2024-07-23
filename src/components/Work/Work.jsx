@@ -1,4 +1,3 @@
-import React from 'react';
 import './Work.css'; // Make sure to import the CSS file
 
 const workdata = [
