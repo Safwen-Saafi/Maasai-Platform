@@ -27,6 +27,7 @@ export function HomePage() {
       <Install/>
       <Work/>
       <Doc/>
+      <AdvancedChart/>
       <FooterLinks />
     </>
   );

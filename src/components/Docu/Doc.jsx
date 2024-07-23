@@ -1,3 +1,4 @@
+import { Center } from '@mantine/core';
 import './Doc.css';
 
 const Doc = () => {
@@ -6,17 +7,17 @@ const Doc = () => {
       <main className="tsu">
         <section className="grid grid-1">
           <figure>
-            <img src="/src/components/Docu/images/sich.png" alt="" />
+            <img src="/src/components/Docu/images/wave3.png" alt="" className='retro'/>
           </figure>
           <figure className="center-container">
             <img
               src="/src/components/Docu/images/bull.png"
               alt=""
               className="autoRotate"
-              style={{ width: '450px', height: '450px' }}
+              style={{ width: '500px', height: '500px' }}
             />
           </figure>
-          <h2 className="autoShow">Bullish or Bearish? Learn to Read the Market</h2>
+          <h2 className="autoShow">Bullish or Bearish? <br/>Learn to Read the Market</h2>
         </section>
         <section className="grid grid-2">
           <div className="autoShow">
