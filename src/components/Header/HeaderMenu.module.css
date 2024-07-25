@@ -1,8 +1,11 @@
-
 .header {
-  justify-content: space-between; 
+  justify-content: space-between;
+  position: sticky;
   height: rem(66px);
   background-color: black;
+  top: 0;
+  z-index: 10;
+  transition: background 0.3s ease;
 }
 
 .inner {
@@ -11,6 +14,33 @@
   justify-content: space-between;
   align-items: center;
 }
+
+
+.hidden {
+  display: none;
+}
+
+.search {
+  border-radius: var(--mantine-radius-lg); /* Optional: adjust border radius if needed */
+  width: 400px; /* Increase the width as needed */
+}
+
+.search input {
+  color: white; /* Ensure the text color is readable */
+}
+
+
+.scrolled {
+  top: 10px;
+  background: rgba(0, 0, 0, 0.7); /* Transparent black background */
+  backdrop-filter: blur(5px); /* Blurred background */
+  width: 70%; /* Desired width */
+  margin: 0 auto; /* Center horizontally */
+  justify-content: center;
+  padding: 0 10px; /* Optional: Add padding to avoid content touching the edges */
+  border-radius: 50px;
+}
+
 
 .link {
   display: block;
@@ -21,27 +51,21 @@
   color: white;
   font-size: calc(var(--mantine-font-size-sm) * 1.1);
   font-weight: 500;
-
-  @mixin hover {
-    background-color: var(--mantine-color-dark-6);
-  }
 }
 
 .linkLabel {
   margin-right: rem(5px);
 }
+
 .link:hover {
-  transform: scale(1.1);
-  background-color: #141516;
+
+  background-color: #424242;
 }
 
-
-
-
-.right{
+.right {
   display: flex;
   align-items: center;
-  gap: 18px; 
+  gap: 18px;
 }
 
 .butt {
@@ -49,30 +73,73 @@
 }
 
 .butt:hover {
-  transform: scale(1.1); /* Example hover effect: scale up the avatar */
+  transform: scale(1.1);
 }
-
-
-/* HeaderMenu.module.css */
 
 .menuDropdown {
-
   background-color: #1f1f1f;
-  border: #141516; /* Custom background color */
-  /* Custom minimum width */
-}
-
-.menuItem:hover {
-  background-color: #424242;
+  border: 1px solid #61574f52;
 }
 
 
 .menuItem {
   font-size: 15px;
   font-weight: 500;
-  padding: 10px 20px; /* Custom padding */
+  padding: 10px 20px;
+}
+
+.menuItem:hover {
+  background-color: #424242;
 }
 
 .linkLabel {
-  font-size: 16px; /* Adjust link label size if needed */
+  font-size: 16px;
+}
+
+/* Additional CSS to position the nested dropdown outside */
+.menuDropdownRight {
+  background-color: #1f1f1f;
+  position: absolute;
+  margin-top: -60px;
+  margin-left: 150px;
+}
+
+
+.itemdrop{
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px;
+  
+}
+
+
+
+
+.menuDropdown::before {
+  content: '';
+  position: absolute;
+  top: -5px; /* Adjust based on your needs */
+  left: 10px; /* Adjust based on your needs */
+  width: 10px;
+  height: 10px;
+  background-color: #1f1f1f;
+  transform: translateX(500%) rotate(45deg);
+  border-top: 1px solid #61574f52;
+  border-left: 1px solid #61574f52;
+  z-index: -1;
+}
+
+
+.menuDropdownRight::before {
+  content: '';
+  position: absolute;
+  top: 15px; /* Adjust based on your needs */
+  left: -5px; /* Adjust based on your needs */
+  width: 10px;
+  height: 10px;
+  background-color: #1f1f1f;
+  transform: rotate(45deg);
+  border-bottom: 1px solid #61574f52;
+  border-left: 1px solid #61574f52;
+  z-index: -100;
 }

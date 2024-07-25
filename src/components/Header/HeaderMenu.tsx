@@ -1,6 +1,7 @@
-import { Menu, Group, Center, Burger, Container, Button, Avatar } from '@mantine/core';
+import { useState, useEffect } from 'react';
+import { Menu, Group, Center, Burger, Container, Button, Input, Autocomplete, rem  } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown } from '@tabler/icons-react';
+import { IconChevronDown, IconChevronRight, IconSearch } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './HeaderMenu.module.css';
 import { UserMenu } from '../UserMenu/UserMenu';
@@ -30,7 +31,14 @@ const links = [
     links: [
       { link: '/faq', label: 'Sentiments' },
       { link: '/demo', label: 'Market Structure' },
-      { link: '/forums', label: 'Relative Value' },
+      {
+        link: '/forums',
+        label: 'Relative Value',
+        subLinks: [
+          { link: '/sub1', label: 'Sub Item 1' },
+          { link: '/sub2', label: 'Sub Item 2' },
+        ],
+      },
       { link: '/forums', label: 'Initial Range' },
       { link: '/forums', label: 'Z Score' },
     ],
@@ -41,11 +49,51 @@ const links = [
 
 export function HeaderMenu() {
   const [opened, { toggle }] = useDisclosure(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 50);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const items = links.map((link) => {
-    const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link} className={classes.menuItem}>{item.label}</Menu.Item>
-    ));
+    const menuItems = link.links?.map((item) => {
+      const subMenuItems = item.subLinks?.map((subItem) => (
+        <Menu.Item key={subItem.link} className={classes.menuItem}>
+          {subItem.label}
+        </Menu.Item>
+      ));
+
+      if (subMenuItems) {
+        return (
+          <Menu key={item.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
+            <Menu.Target>
+              <a
+                href={item.link}
+                className={classes.link}
+                onClick={(event) => event.preventDefault()}
+              >
+                <Center>
+                  <span className={classes.itemdrop}>{item.label}</span>
+                  <IconChevronRight size="0.9rem" stroke={1.9} />
+                </Center>
+              </a>
+            </Menu.Target>
+            <Menu.Dropdown className={classes.menuDropdownRight}>{subMenuItems}</Menu.Dropdown>
+          </Menu>
+        );
+      }
+
+      return (
+        <Menu.Item key={item.link} className={classes.menuItem}>
+          {item.label}
+        </Menu.Item>
+      );
+    });
 
     if (menuItems) {
       return (
@@ -80,13 +128,24 @@ export function HeaderMenu() {
   });
 
   return (
-    <header className={classes.header}>
+    <header className={`${classes.header} ${scrolled ? classes.scrolled : ''}`}>
       <Container size="xl">
         <div className={classes.inner}>
           <MantineLogo size={28} />
-          <Group gap={10} visibleFrom="sm">
+          <Group gap={10} visibleFrom="sm" className={scrolled ? classes.hidden : ''}>
             {items}
           </Group>
+          {scrolled && (
+            <Autocomplete
+              className={classes.search}
+              placeholder="Search Markets"
+              leftSection={<IconSearch style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}
+              data={['React', 'Angular', 'Vue', 'Next.js', 'Riot.js', 'Svelte', 'Blitz.js']}
+              visibleFrom="xs"
+              size="md"
+            
+            />
+          )}
           <div className={classes.right}>
             <LanguagePicker />
             <UserMenu />
@@ -102,7 +161,6 @@ export function HeaderMenu() {
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
         </div>
       </Container>
-      
     </header>
   );
 }
