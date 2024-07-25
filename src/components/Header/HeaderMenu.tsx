@@ -1,11 +1,49 @@
 import { useState, useEffect } from 'react';
-import { Menu, Group, Center, Burger, Container, Button, Input, Autocomplete, rem  } from '@mantine/core';
+import {
+  Menu,
+  Group,
+  Center,
+  Burger,
+  Container,
+  Button,
+  Autocomplete,
+  Drawer,
+  Stack,
+  rem,
+} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown, IconChevronRight, IconSearch } from '@tabler/icons-react';
-import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './HeaderMenu.module.css';
 import { UserMenu } from '../UserMenu/UserMenu';
 import { LanguagePicker } from '../LanguagePicker/LanguagePicker';
+import { spotlight, Spotlight } from '@mantine/spotlight'; // Import Spotlight
+import logo from './logo.png';
+import { IconHome, IconDashboard, IconFileText } from '@tabler/icons-react';
+import { SpotlightActionData } from '@mantine/spotlight';
+
+const actions: SpotlightActionData[] = [
+  {
+    id: 'home',
+    label: 'Home',
+    description: 'Get to home page',
+    onClick: () => console.log('Home'),
+    leftSection: <IconHome style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
+  },
+  {
+    id: 'dashboard',
+    label: 'Dashboard',
+    description: 'Get full information about current system status',
+    onClick: () => console.log('Dashboard'),
+    leftSection: <IconDashboard style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
+  },
+  {
+    id: 'documentation',
+    label: 'Documentation',
+    description: 'Visit documentation to lean more about all features',
+    onClick: () => console.log('Documentation'),
+    leftSection: <IconFileText style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
+  },
+];
 
 const links = [
   {
@@ -49,6 +87,7 @@ const links = [
 
 export function HeaderMenu() {
   const [opened, { toggle }] = useDisclosure(false);
+  const [drawerOpened, { open, close }] = useDisclosure(false);
   const [scrolled, setScrolled] = useState(false);
 
   const handleScroll = () => {
@@ -131,20 +170,18 @@ export function HeaderMenu() {
     <header className={`${classes.header} ${scrolled ? classes.scrolled : ''}`}>
       <Container size="xl">
         <div className={classes.inner}>
-          <MantineLogo size={28} />
+          <img src={logo} alt="Logo" className={classes.logo} />
           <Group gap={10} visibleFrom="sm" className={scrolled ? classes.hidden : ''}>
             {items}
           </Group>
           {scrolled && (
-            <Autocomplete
-              className={classes.search}
-              placeholder="Search Markets"
-              leftSection={<IconSearch style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}
-              data={['React', 'Angular', 'Vue', 'Next.js', 'Riot.js', 'Svelte', 'Blitz.js']}
-              visibleFrom="xs"
-              size="md"
-            
-            />
+            <Button className={classes.searchButton} onClick={spotlight.open}>
+              <div className={classes.searchContent}>
+                <IconSearch size="1.2rem" className={classes.searchIcon}/>
+                <span className={classes.searchText}>Search Markets</span>
+                <span className={classes.shortcut}>Ctrl + k</span>
+              </div>
+            </Button>
           )}
           <div className={classes.right}>
             <LanguagePicker />
@@ -158,9 +195,39 @@ export function HeaderMenu() {
               Get Started
             </Button>
           </div>
-          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
+          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" onClick={open} />
         </div>
       </Container>
+      <Drawer opened={drawerOpened} onClose={close} title="Menu">
+        <Stack>
+          {links.map((link) => (
+            <div key={link.label}>
+              <a href={link.link} className={classes.drawerLink}>
+                {link.label}
+              </a>
+              {link.links && (
+                <Stack spacing="xs">
+                  {link.links.map((sublink) => (
+                    <a key={sublink.link} href={sublink.link} className={classes.drawerSublink}>
+                      {sublink.label}
+                    </a>
+                  ))}
+                </Stack>
+              )}
+            </div>
+          ))}
+        </Stack>
+      </Drawer>
+      <Spotlight shortcut={['mod + K', 'mod + P', '/']} actions={[]} />
+      <Spotlight
+        actions={actions}
+        nothingFound="Nothing found..."
+        highlightQuery
+        searchProps={{
+          leftSection: <IconSearch style={{ width: rem(20), height: rem(20) }} stroke={1.5} />,
+          placeholder: 'Search...',
+        }}
+      />
     </header>
   );
 }

@@ -15,7 +15,6 @@
   align-items: center;
 }
 
-
 .hidden {
   display: none;
 }
@@ -29,7 +28,6 @@
   color: white; /* Ensure the text color is readable */
 }
 
-
 .scrolled {
   top: 10px;
   background: rgba(0, 0, 0, 0.7); /* Transparent black background */
@@ -40,7 +38,6 @@
   padding: 0 10px; /* Optional: Add padding to avoid content touching the edges */
   border-radius: 50px;
 }
-
 
 .link {
   display: block;
@@ -53,12 +50,16 @@
   font-weight: 500;
 }
 
+.logo {
+  width: 180px;
+  height: auto; /* or specify a height if needed */
+}
+
 .linkLabel {
   margin-right: rem(5px);
 }
 
 .link:hover {
-
   background-color: #424242;
 }
 
@@ -80,7 +81,6 @@
   background-color: #1f1f1f;
   border: 1px solid #61574f52;
 }
-
 
 .menuItem {
   font-size: 15px;
@@ -104,16 +104,11 @@
   margin-left: 150px;
 }
 
-
-.itemdrop{
+.itemdrop {
   font-size: 15px;
   font-weight: 500;
   padding: 10px;
-  
 }
-
-
-
 
 .menuDropdown::before {
   content: '';
@@ -129,7 +124,6 @@
   z-index: -1;
 }
 
-
 .menuDropdownRight::before {
   content: '';
   position: absolute;
@@ -142,4 +136,57 @@
   border-bottom: 1px solid #61574f52;
   border-left: 1px solid #61574f52;
   z-index: -100;
+}
+
+.drawerLink {
+  display: block;
+  padding: rem(8px) 0;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.drawerSublink {
+  display: block;
+  padding: rem(4px) 0;
+  padding-left: rem(12px);
+  color: #aaa;
+  text-decoration: none;
+}
+
+
+.searchButton {
+  background-color: #1f1f1f; /* Light background color */
+  border: 1px solid #424242; /* Border color */
+  padding: 10px 20px 10px 10px; /* Padding around text */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px; /* Font size */
+  border-radius: 10px; /* Rounded corners */
+  width: 300px;
+  height: auto;
+}.searchButton:hover{
+  background-color: #424242;
+}
+.searchContent {
+  display: flex;
+  align-items: center;
+}
+.searchIcon{
+  color: #828282;
+}
+.searchText {
+  color: #828282;
+  margin-left: 8px; /* Space between icon and text */
+  margin-right: auto; /* Push "ctrl + k" to the right */
+}
+
+.shortcut {
+  background-color: #000; /* Black background for shortcut */
+  color: #c9c9c9; /* White text color */
+  border-radius: 5px; /* Rounded corners */
+  padding: 6px 6px; /* Padding inside shortcut */
+  font-size: 12px; /* Font size for shortcut */
+  margin-left: 100px;
 }

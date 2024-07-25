@@ -1068,6 +1068,18 @@
 "@mantine/hooks@>=7.0.0", "@mantine/hooks@7.11.1":
   version "7.11.1"
 
+"@mantine/spotlight@^7.11.1":
+  version "7.11.1"
+  resolved "https://registry.npmjs.org/@mantine/spotlight/-/spotlight-7.11.1.tgz"
+  integrity sha512-4+zYEiui6BDQNuxKDrh9EH7U3ejzD6vesMhA8y0dhEIXk5fA1b0Xy0Hn/M4tfJuR1EGlicGmgLg/6Vpxp1ftRA==
+  dependencies:
+    "@mantine/store" "7.11.1"
+
+"@mantine/store@7.11.1":
+  version "7.11.1"
+  resolved "https://registry.npmjs.org/@mantine/store/-/store-7.11.1.tgz"
+  integrity sha512-5xOompA7pADDvYlw6KEr0YIr95bdFI0W/KZizi8E/BKOLVUpku1UvqcClodq4U0Xjz5eZt/Jf3gEV9lyJbt8Zw==
+
 "@mantinex/mantine-logo@^1.0.1":
   version "1.0.1"
   resolved "https://registry.npmjs.org/@mantinex/mantine-logo/-/mantine-logo-1.0.1.tgz"
@@ -4250,6 +4262,11 @@ lodash.merge@^4.6.2:
 lodash.truncate@^4.4.2:
   version "4.4.2"
 
+lodash@^3.10.1:
+  version "3.10.1"
+  resolved "https://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz"
+  integrity sha512-9mDDwqVIma6OZX79ZlDACZl8sBm0TEnkf99zV3iMA4GzkIT/9hiqP5mY0HoT1iNLCrKc/R1HByV+yJfRWVJryQ==
+
 lodash@^4.17.21:
   version "4.17.21"
 
@@ -5532,6 +5549,13 @@ source-map@^0.6.0, source-map@~0.6.1:
 
 space-separated-tokens@^2.0.0:
   version "2.0.2"
+
+spotlight@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/spotlight/-/spotlight-1.2.0.tgz"
+  integrity sha512-eVN8H9xLJccHRPWWL+8/Z6vqbWbBNNnrlOAynJw2BEPkPm1uiuuxU8RiRhJjaIZPqCiCa/koztBvt4Asu4c6GQ==
+  dependencies:
+    lodash "^3.10.1"
 
 stackback@0.0.2:
   version "0.0.2"

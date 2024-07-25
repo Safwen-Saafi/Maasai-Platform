@@ -29,6 +29,7 @@ export function HomePage() {
       <Work/>
       <Doc/>
       <Blur/>
+
       <FooterLinks />
     </>
   );

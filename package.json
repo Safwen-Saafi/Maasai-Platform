@@ -25,6 +25,7 @@
     "@fullcalendar/react": "^6.1.14",
     "@mantine/core": "7.11.1",
     "@mantine/hooks": "7.11.1",
+    "@mantine/spotlight": "^7.11.1",
     "@mantinex/mantine-logo": "^1.0.1",
     "@mui/material": "^5.16.0",
     "@tabler/icons-react": "^3.10.0",
@@ -59,6 +60,7 @@
     "recharts": "^2.12.7",
     "slick-carousel": "^1.8.1",
     "socket.io-client": "^4.7.5",
+    "spotlight": "^1.2.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {

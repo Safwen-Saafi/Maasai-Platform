@@ -40,7 +40,9 @@ export function UserMenu() {
             size="md"
             className={classes.ava}
             onClick={() => setOpened(true)}
-            onClickCapture={() => setOpened(false)}
+            onAbort={() => setOpened(false)}
+            
+            
           />
         </Menu.Target>
         <Menu.Dropdown
