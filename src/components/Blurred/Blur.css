@@ -1,5 +1,6 @@
 .ts {
   background-color: black;
+  
 }
 
 .tsu {
@@ -45,6 +46,7 @@
 .autoBLur {
   animation: autoBLurAnimation linear both;
   animation-timeline: view();
+  color: white;
 }
 
 @keyframes autoBLurAnimation {
