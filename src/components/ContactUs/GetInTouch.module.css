@@ -1,0 +1,93 @@
+.body{
+    font-family: Trebuchet MS;
+}
+
+.top{
+  background-color: black;
+}
+
+.wrapper {
+  display: flex;
+  background-color: var(--mantine-color-dark-8);
+  border-radius: var(--mantine-radius-lg);
+  padding: rem(25px);
+  border: rem(1px) solid #3b3B3B;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    flex-direction: column;
+  }
+}
+
+.form {
+  flex: 1;
+  padding: var(--mantine-spacing-xl);
+  padding-left: calc(var(--mantine-spacing-xl) * 2);
+  border-left: 0;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    padding: var(--mantine-spacing-md);
+    padding-left: var(--mantine-spacing-md);
+  }
+}
+
+.fields {
+  margin-top: rem(-12px);
+  
+}
+
+.fieldInput {
+  flex: 1;
+
+  & + & {
+    margin-left: var(--mantine-spacing-md);
+
+    @media (max-width: $mantine-breakpoint-sm) {
+      margin-left: 0;
+      margin-top: var(--mantine-spacing-md);
+    }
+  }
+}
+
+.fieldsGroup {
+  display: flex;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    flex-direction: column;
+  }
+}
+
+.contacts {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: var(--mantine-radius-lg);
+  background-size: cover;
+  background-position: center;
+  border: rem(1px) solid transparent;
+  padding: var(--mantine-spacing-xl);
+  flex: 0 0 rem(280px);
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    margin-bottom: var(--mantine-spacing-sm);
+    padding-left: var(--mantine-spacing-md);
+  }
+}
+
+.title {
+  margin-bottom: calc(var(--mantine-spacing-xl) * 1.5);
+  font-weight: 500;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    margin-bottom: var(--mantine-spacing-xl);
+  }
+}
+
+.control {
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  @media (max-width: $mantine-breakpoint-sm) {
+    flex: 1;
+  }
+}
+
+.control:hover {
+  transform: scale(1.1); /* Example hover effect: scale up the avatar */
+}

@@ -1,0 +1,184 @@
+.center-container {
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+  height: 40vh; /* Full viewport height, adjust as needed */
+}
+
+.ts {
+  background-color: black;
+}
+
+.tsu {
+  background-color: black;
+  width: min(1400px, 90vw);
+  margin: auto;
+  padding: 20px;
+}
+
+.grid figure img {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(var(--row), 100px);
+  margin-top: 0px;
+  gap: 50px;
+}
+
+.grid-1 figure:nth-child(1) {
+  grid-column: 1 / 7; /* Span all columns */
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Full viewport height */
+  
+}
+
+.grid-1 figure:nth-child(1) img {
+  width: 180%;
+  height: 100%;
+  object-fit: contain; /* Ensures the image covers the entire container */
+}
+
+.grid-1 figure:nth-child(2) {
+  grid-column: 3 / 5;
+  grid-row: 1;
+}
+
+.grid-1 h2:nth-child(3) {
+  color: white;
+  margin-top: -190px;
+  font-size: 6em;
+  grid-column: 1 / 7;
+  text-align: center;
+  grid-row: 5;
+  z-index: 1;
+  margin-bottom: 100px;
+}
+
+.grid-1 {
+  --row: 2;
+  height: 95vh; /* Full viewport height */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr auto;
+}
+
+.grid-2 {
+  --row: 8;
+  font-size: 1.7em;
+}
+
+.grid-2 div:nth-child(1) {
+  grid-column: 1 / 4;
+  grid-row: 3;
+}
+
+.grid-2 div:nth-child(2) {
+  grid-column: 4 / 7;
+  grid-row: 1;
+}
+
+.grid-2 div:nth-child(3) {
+  grid-column: 4 / 7;
+  grid-row: 4;
+}
+
+.grid-2 div:nth-child(4) {
+  grid-column: 1 / 4;
+  grid-row: 6;
+}
+
+@media screen and (max-width: 1023px) {
+  header img {
+    height: 2em;
+  }
+
+  .banner .content h1 {
+    font-size: 12em;
+  }
+
+  .banner .content .right {
+    transform: none;
+  }
+
+  .grid-2 div:nth-child(1) {
+    grid-row: 2;
+  }
+
+  .grid-2 div:nth-child(3) {
+    grid-row: 6;
+  }
+
+  .grid-2 div:nth-child(4) {
+    grid-row: 5;
+  }
+
+
+}
+
+@media screen and (max-width: 1023px) {
+  .grid-1 h2:nth-child(3) {
+    font-size: 3em;
+  }
+
+  .grid {
+    display: block;
+  }
+
+
+}
+
+.autoRotate {
+  animation: autoRotateAnimation;
+  animation-timeline: view();
+}
+
+@keyframes autoRotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.autoShow {
+  margin-top: 0px;
+  animation: autoShowAnimation both;
+  animation-timeline: view(70% 5%);
+}
+
+@keyframes autoShowAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(200px) scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+
+
+
+.highliht {
+  position: relative;
+  background-color: rgba(53, 168, 0, 0.3);
+  border-radius: 40px 60px 15px 60px;
+  padding: rem(4px) rem(12px);
+}
+
+
+.highlit {
+  position: relative;
+  background-color: rgba(255, 16, 16, 0.3);
+  border-radius: 40px 60px 15px 60px;
+  padding: rem(4px) rem(12px);
+}

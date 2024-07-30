@@ -39,8 +39,8 @@ export function UserMenu() {
             radius="sm"
             size="md"
             className={classes.ava}
-            onMouseEnter={() => setOpened(true)}
-            onMouseLeave={() => setOpened(false)}
+            onClick={() => setOpened(true)}
+            onAbort={() => setOpened(false)}
           />
         </Menu.Target>
         <Menu.Dropdown

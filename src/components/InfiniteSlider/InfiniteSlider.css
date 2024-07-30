@@ -1,0 +1,29 @@
+.carousel-container {
+  text-align: center;
+  background-color: #000000; /* Replace with light pink or desired color */
+}
+
+.carousel-wrapper {
+  margin: 0 auto;
+  max-width: 70%; /* Adjust as needed */
+  padding: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .carousel-wrapper {
+      max-width: 768px; /* Adjust as needed */
+  }
+}
+
+@media (max-width: 700px) {
+  .carousel-wrapper {
+      max-width: 480px; /* Adjust as needed */
+  }
+}
+
+@media (max-width: 500px) {
+  .carousel-wrapper {
+      max-width: 320px; /* Adjust as needed */
+  }
+}
