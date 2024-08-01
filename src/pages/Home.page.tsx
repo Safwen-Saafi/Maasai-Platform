@@ -16,6 +16,10 @@ import TradingViewTickerWidget from '@/components/Ticker/TradingViewTickerWidget
 import SmartforexscreenComponent from '@/components/SmartForexScreen/SmartforexscreenComponent';
 import EconomiccalendarComponent from '@/components/economic-calendar/EconomiccalendarComponent';
 import Work from '@/components/Work/Work';
+import MarketSummary from '@/components/marketSummary/MarketSummaryComponent';
+import FaqComponent from '@/components/faq/FaqComponent';
+import NewslaterComponent from '@/components/newslater/NewslaterComponent';
+
 
 export function HomePage() {
   return (
@@ -34,7 +38,10 @@ export function HomePage() {
       <Doc/>
       <Blur/>
       <SmartforexscreenComponent/>
+      <MarketSummary/>
       <EconomiccalendarComponent/>
+      <FaqComponent/>
+      <NewslaterComponent/>
       <FooterLinks />
     </>
   );

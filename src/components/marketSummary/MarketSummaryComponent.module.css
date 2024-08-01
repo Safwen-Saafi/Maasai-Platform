@@ -1,0 +1,29 @@
+.title {
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem; /* Larger title for prominence */
+    font-weight: bold; /* Bold title for emphasis */
+    padding: 2rem;
+    margin-bottom: 0;
+  }
+  
+  .title .markets {
+    color: #e0e0e0; /* White color for ECONOMIC */
+  }
+  
+  .title .summary {
+    color: #91C43B; /* Green color for CALENDAR */
+  }
+  .marketssummarycontainer {
+    background-color: #1a1d22; /* Background color */
+  }
+  .tradingview-widget-container {
+    position: relative;
+    width: 100%;
+    height: 700px; /* Adjust as needed */
+}
+
+.tradingview-widget-container__widget {
+    width: 100%;
+    height: 650px;
+}

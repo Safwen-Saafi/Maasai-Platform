@@ -1,0 +1,68 @@
+.title {
+  text-align: left;
+  padding: 80px 50px; /* Adjust padding as needed */
+  margin: 0; /* Remove default margins */
+  max-width: 600px;
+  position: relative; /* Ensure relative positioning to align it properly */
+  font-size: 36px;
+}
+
+h1 {
+  color: white;
+  font-size: 2rem; /* Match FinancialnewsComponent */
+  margin: 0; /* Remove default margin */
+  font-weight: bold; /* Make title bold */
+  line-height: 1.2; /* Adjust line-height for consistency */
+}
+
+h1 .frequently {
+  color: white; /* White color for FREQUENTLY */
+}
+
+h1 .questions {
+  color: #91C43B; /* Green color for QUESTIONS */
+}
+
+.item {
+  border-radius: var(--mantine-radius-md);
+  margin-bottom: var(--mantine-spacing-lg);
+  border: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+}
+
+.gradient {
+  background: linear-gradient(135deg, #91C43B 0%, #fa9918 100%);
+}
+
+/* Responsive Styles */
+
+@media (max-width: 1200px) {
+  .title {
+    padding: 60px 30px; /* Adjust padding for medium screens */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Slightly smaller font size for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    padding: 40px 20px; /* Adjust padding for smaller screens */
+    max-width: 90%; /* Make sure the title fits on smaller screens */
+  }
+
+  h1 {
+    font-size: 1.25rem; /* Further reduce font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    padding: 20px 10px; /* Adjust padding for very small screens */
+    max-width: 100%; /* Full width on very small screens */
+  }
+
+  h1 {
+    font-size: 1rem; /* Smallest font size for very small screens */
+  }
+}

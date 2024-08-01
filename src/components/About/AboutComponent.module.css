@@ -20,7 +20,7 @@ h1 .are {
     color: #91C43B; /* Green color for ARE */
 }
 
-section {
+.section {
     padding: 0;
     margin: 0; 
     align-items: center;
