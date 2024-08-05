@@ -171,15 +171,19 @@ export function HeaderMenu() {
       <Container size="xl">
         <div className={classes.inner}>
           <img src={logo} alt="Logo" className={classes.logo} />
-          <Group gap={10} visibleFrom="sm" className={scrolled ? classes.hidden : ''}>
+          <Group gap={-20} visibleFrom="sm" className={scrolled ? classes.hidden : ''}>
             {items}
           </Group>
           {scrolled && (
             <Button className={classes.searchButton} onClick={spotlight.open}>
               <div className={classes.searchContent}>
+                <div className={classes.searchRight}>
                 <IconSearch size="1.2rem" className={classes.searchIcon}/>
                 <span className={classes.searchText}>Search Markets</span>
-                <span className={classes.shortcut}>Ctrl + k</span>
+                </div>
+                <span className={classes.shortut}>Ctrl + k</span>
+                
+
               </div>
             </Button>
           )}

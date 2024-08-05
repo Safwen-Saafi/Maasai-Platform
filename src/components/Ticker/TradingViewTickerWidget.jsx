@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import './TradingViewTickerWidget.css'
 
 const TradingViewTickerWidget = () => {
   const widgetRef = useRef(null);

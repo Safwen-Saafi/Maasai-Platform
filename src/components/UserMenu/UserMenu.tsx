@@ -41,8 +41,6 @@ export function UserMenu() {
             className={classes.ava}
             onClick={() => setOpened(true)}
             onAbort={() => setOpened(false)}
-            
-            
           />
         </Menu.Target>
         <Menu.Dropdown

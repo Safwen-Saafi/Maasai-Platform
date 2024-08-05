@@ -1,63 +1,132 @@
-*{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
+    sans-serif;
 }
-
+.bo {
+  background-color: #2523238f;
+  display: 'inline-block';
+  width: 90%;
+  border-radius: 10px;
+  @media (max-width: 1085px) {
+    background-color: #131111ce;
+  }
+}
 .hero {
   position: relative;
   background-image: url('./Component 8.png');
   background-size: cover;
-  background-position: center;
+  background-color: black;
+  background-position: center center; /* Default positioning */
   width: 100%;
   height: 90vh;
   display: grid;
   align-items: center; /* Vertical center */
   overflow: hidden; /* Ensure content below animates in properly */
+
+  @media (max-width: 500px) {
+    height: 50vh;
+    padding: 20px;
+  }
+
+  @media (max-width: 1065px) {
+    background-position-x: -70px; /* Adjust as needed */
+    background-repeat: no-repeat;
+    height: 80vh;
+  }
+  @media (max-width: 980px) {
+    background-image: url('./small.jpeg');
+    background-size: cover; /* Ensure the new image also covers the container */
+    background-position: center; /* Adjust as needed */
+    height: 70vh;
+  }
 }
 
 .content {
   max-width: rem(800px);
-  margin-right: 790px;
+  margin-right: 690px;
+  margin-bottom: 100px;
   opacity: 0;
   transform: translateY(100px); /* Start position offscreen */
-  transition: opacity 0.8s ease, transform 0.8s ease; /* Animation transition */
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease; /* Animation transition */
 
-  @media (max-width: $mantine-breakpoint-md) {
+  @media (max-width: 1400px) {
     max-width: 100%;
-    margin-right: 0;
+    margin-left: 50px;
+    margin-right: 590px;
+    margin-bottom: 50px;
+  }
+  @media (max-width: 1303px) {
+    max-width: 100%;
+    margin-left: 120px;
+  }
+  @media (max-width: 500px) {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+  }
+  @media (max-width: 700px) {
+    max-width: 90%;
+    margin-left: 50px;
+  }
+  @media (max-width: 980px) {
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+    border-radius: 8px;
+    padding-bottom: 20px;
+    padding-top: -20px;
+    @media (max-width: 600px) {
+      padding-right: 210px;
+      max-width: fit-content;
+    }
+  }
+  @media (max-width: 500px) {
+    max-width: 100%;
+    margin-left: -30px;
+    text-align: center;
+    border-top: 0px;
   }
 }
-
-
 
 .content.show {
   opacity: 1;
   transform: translateY(0); /* End position onscreen */
 }
 
-
-
-
 .title {
   letter-spacing: 1px;
   color: var(--mantine-color-white);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
+    sans-serif;
   font-size: rem(65px);
   line-height: 1.1;
   font-weight: 800;
   width: 500px;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  position: relative;
+  color: #fff; /* Text color */
+  text-shadow:
+    0.5px 0.5px 0.5px #000,
+    /* Horizontal and vertical offset with black color */ -0.5px -0.5px 0.5px #000,
+    0.5px 0.5px 0.5px #000,
+    -0.5px 0.5px 0.5px #000;
 
-  @media (max-width: $mantine-breakpoint-xs) {
-    font-size: rem(28px);
+  @media (max-width: 1084px) {
+    font-size: rem(50px);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 740px) {
+    font-size: rem(40px);
+    line-height: 1.5;
+    max-width: fit-content;
+    position: relative;
   }
 }
 
 .title.visible {
   opacity: 1;
 }
-
-
 
 .control {
   @media (max-width: $mantine-breakpoint-xs) {
@@ -74,6 +143,9 @@
   background-color: #2a2c2e;
   color: white;
   font-size: 14px;
+  @media (max-width: 840px) {
+    width: 120px;
+  }
 }
 
 .marketIndicator:hover {
@@ -84,35 +156,46 @@
   width: 40px;
   height: 40px;
   border-radius: 15px;
+  @media (max-width: 840px) {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .marketIndicator .symbol {
   font-size: large;
   font-weight: bold;
+  @media (max-width: 840px) {
+    font-size: smaller;
+  }
 }
 
 .marketIndicator .change {
   font-weight: bold;
   font-size: large; /* Example of adjusting font size */
+  @media (max-width: 840px) {
+    font-size: smaller;
+  }
 }
-
 .startText {
   font-weight: bold;
   font-size: larger;
   width: 500px;
+  background-color: #000;
 }
-
 
 .animatedArrow {
   position: absolute;
-  bottom: 0px; /* Adjust as needed */
+  bottom: 40px; /* Adjust as needed */
   left: 50%;
   transform: translateX(-50%);
   width: 20px;
   height: 40px;
   animation: bounce 2s infinite alternate;
   opacity: 90%;
-  
+  @media (max-width: 980px) {
+    bottom: -10px;
+  }
 }
 
 @keyframes bounce {
@@ -127,12 +210,9 @@
   }
 }
 
-
 .highlight {
   position: relative;
-  background-color: rgba(173, 70, 23, 0.300);
+  background-color: rgba(173, 70, 23, 0.3);
   border-radius: 20px 10px 15px 40px;
   padding: rem(4px) rem(12px);
 }
-
-
