@@ -39,9 +39,14 @@
   }
   
   .card {
-    border: rem(1px) solid var(--mantine-color-dark-5);
+    border: rem(2px) solid var(--mantine-color-dark-5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Default shadow */
   }
-  
+  .card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(105, 68, 33, 0.2); /* Shadow on hover */
+  }
   .cardTitle {
     &::after {
       content: '';

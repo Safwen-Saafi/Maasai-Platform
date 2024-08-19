@@ -171,15 +171,17 @@ export function HeaderMenu() {
       <Container size="xl">
         <div className={classes.inner}>
           <img src={logo} alt="Logo" className={classes.logo} />
-          <Group gap={10} visibleFrom="sm" className={scrolled ? classes.hidden : ''}>
+          <Group gap={-20} visibleFrom="sm" className={scrolled ? classes.hidden : ''}>
             {items}
           </Group>
           {scrolled && (
             <Button className={classes.searchButton} onClick={spotlight.open}>
               <div className={classes.searchContent}>
-                <IconSearch size="1.2rem" className={classes.searchIcon}/>
-                <span className={classes.searchText}>Search Markets</span>
-                <span className={classes.shortcut}>Ctrl + k</span>
+                <div className={classes.searchRight}>
+                  <IconSearch size="1.2rem" className={classes.searchIcon} />
+                  <span className={classes.searchText}>Search Markets</span>
+                </div>
+                <span className={classes.shortut}>Ctrl + k</span>
               </div>
             </Button>
           )}
@@ -195,10 +197,15 @@ export function HeaderMenu() {
               Get Started
             </Button>
           </div>
-          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" onClick={open} />
+          <Burger opened={opened} onClick={open} size="sm" hiddenFrom="sm" />
         </div>
       </Container>
-      <Drawer opened={drawerOpened} onClose={close} title="Menu">
+      <Drawer
+        opened={drawerOpened}
+        onClose={close}
+        title="Menu"
+        className={classes.customDrawer} // Add this line
+      >
         <Stack>
           {links.map((link) => (
             <div key={link.label}>
@@ -206,7 +213,7 @@ export function HeaderMenu() {
                 {link.label}
               </a>
               {link.links && (
-                <Stack spacing="xs">
+                <Stack>
                   {link.links.map((sublink) => (
                     <a key={sublink.link} href={sublink.link} className={classes.drawerSublink}>
                       {sublink.label}

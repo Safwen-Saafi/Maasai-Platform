@@ -151,7 +151,6 @@
   margin-top: 0px;
   animation: autoShowAnimation both;
   animation-timeline: view(70% 5%);
-  color: white;
 }
 
 @keyframes autoShowAnimation {

@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './AboutComponent.module.css';
 // Imported assets 
 import about_bg from './about_bg.png';
