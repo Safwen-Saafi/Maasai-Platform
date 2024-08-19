@@ -178,12 +178,10 @@ export function HeaderMenu() {
             <Button className={classes.searchButton} onClick={spotlight.open}>
               <div className={classes.searchContent}>
                 <div className={classes.searchRight}>
-                <IconSearch size="1.2rem" className={classes.searchIcon}/>
-                <span className={classes.searchText}>Search Markets</span>
+                  <IconSearch size="1.2rem" className={classes.searchIcon} />
+                  <span className={classes.searchText}>Search Markets</span>
                 </div>
                 <span className={classes.shortut}>Ctrl + k</span>
-                
-
               </div>
             </Button>
           )}
@@ -199,10 +197,15 @@ export function HeaderMenu() {
               Get Started
             </Button>
           </div>
-          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm"/>
+          <Burger opened={opened} onClick={open} size="sm" hiddenFrom="sm" />
         </div>
       </Container>
-      <Drawer opened={drawerOpened} onClose={close} title="Menu">
+      <Drawer
+        opened={drawerOpened}
+        onClose={close}
+        title="Menu"
+        className={classes.customDrawer} // Add this line
+      >
         <Stack>
           {links.map((link) => (
             <div key={link.label}>
