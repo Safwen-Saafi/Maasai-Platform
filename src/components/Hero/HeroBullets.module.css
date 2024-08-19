@@ -4,6 +4,7 @@
 }
 .bo {
   background-color: #2523238f;
+  color:rgb(172, 158, 158);
   display: 'inline-block';
   width: 90%;
   border-radius: 10px;
@@ -140,8 +141,13 @@
   gap: 10px;
   padding: 10px 15px;
   border-radius: 20px;
+  border: 1px solid rgb(230, 196, 0);
   background-color: #2a2c2e;
   color: white;
+  position: relative;
+  overflow: hidden;
+  width: 150px; /* Fixed width to maintain box size */
+  height: 80px; /* Fixed height to maintain box size */
   font-size: 14px;
   @media (max-width: 840px) {
     width: 120px;
@@ -215,4 +221,13 @@
   background-color: rgba(173, 70, 23, 0.3);
   border-radius: 20px 10px 15px 40px;
   padding: rem(4px) rem(12px);
+}
+
+
+.animatedText {
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden;
+  opacity: 1;
+  transform: translateY(0);
 }

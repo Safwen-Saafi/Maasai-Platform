@@ -69,44 +69,6 @@ export function UserMenu() {
           </Menu.Item>
 
           <Menu.Divider />
-
-          <Menu.Item
-            leftSection={
-              <IconHeart
-                style={{ width: rem(16), height: rem(16) }}
-                stroke={1.5}
-                color={theme.colors.red[6]}
-              />
-            }
-            className={classes.menuItem}
-          >
-            Liked posts
-          </Menu.Item>
-          <Menu.Item
-            leftSection={
-              <IconStar
-                style={{ width: rem(16), height: rem(16) }}
-                stroke={1.5}
-                color={theme.colors.yellow[6]}
-              />
-            }
-            className={classes.menuItem}
-          >
-            Saved posts
-          </Menu.Item>
-          <Menu.Item
-            leftSection={
-              <IconMessage
-                style={{ width: rem(16), height: rem(16) }}
-                stroke={1.5}
-                color={theme.colors.blue[6]}
-              />
-            }
-            className={classes.menuItem}
-          >
-            Your comments
-          </Menu.Item>
-
           <Menu.Label>Settings</Menu.Label>
           <Menu.Item
             leftSection={<IconSettings style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}

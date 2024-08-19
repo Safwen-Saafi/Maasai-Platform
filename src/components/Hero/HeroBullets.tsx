@@ -4,17 +4,23 @@ import { Container, Title, Text, Group, Box } from '@mantine/core';
 import classes from './HeroBullets.module.css';
 
 const marketData = [
-  { symbol: 'BTCUSD', change: '+0.14%', icon: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png' },
   {
-    symbol: 'TSLA',
-    change: '-7.64%',
-    icon: 'https://logos-world.net/wp-content/uploads/2020/09/Tesla-Logo-700x394.png',
+    symbol: 'BTCUSD',
+    change: '+0.14%',
+    price: '$290',
+    icon: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
   },
-  { symbol: 'AAPL', change: '-2.43%', icon: 'https://s3-symbol-logo.tradingview.com/apple.svg' },
+  {
+    symbol: 'AAPL',
+    change: '-2.43%',
+    price: '$150',
+    icon: 'https://s3-symbol-logo.tradingview.com/apple.svg',
+  },
 ];
 
 export function HeroBullets() {
   const [isVisible, setIsVisible] = useState(false);
+  const [showPrice, setShowPrice] = useState(false); // State to toggle between percentage and price
 
   useEffect(() => {
     // Delay the animation to start after a short delay (adjust as needed)
@@ -23,6 +29,15 @@ export function HeroBullets() {
     }, 500);
 
     return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    // Toggle between showing percentage and price every 3 seconds
+    const interval = setInterval(() => {
+      setShowPrice((prevShowPrice) => !prevShowPrice);
+    }, 3000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const bitcoin = marketData.find((market) => market.symbol === 'BTCUSD');
@@ -47,18 +62,20 @@ export function HeroBullets() {
               Start trading with confidence today
             </Text>
           </Box>
-          <Group mt={30} >
+          <Group mt={30}>
             {bitcoin && (
               <div className={classes.marketIndicator}>
                 <img src={bitcoin.icon} alt={bitcoin.symbol} />
                 <div>
                   <Text className={classes.symbol}>{bitcoin.symbol}</Text>
                   <Text
-                    className={classes.change}
+                    className={`${classes.change} ${classes.animatedText}`}
                     size="lg"
-                    color={bitcoin.change.startsWith('+') ? 'green' : 'red'}
+                    style={{
+                      color: showPrice ? '#ac9e9e' : bitcoin.change.startsWith('+') ? 'green' : 'red',
+                    }}
                   >
-                    {bitcoin.change}
+                    {showPrice ? bitcoin.price : bitcoin.change}
                   </Text>
                 </div>
               </div>
@@ -69,11 +86,14 @@ export function HeroBullets() {
                 <div>
                   <Text className={classes.symbol}>{apple.symbol}</Text>
                   <Text
-                    className={classes.change}
+                    className={`${classes.change} ${classes.animatedText}`}
                     size="lg"
-                    color={apple.change.startsWith('+') ? 'green' : 'red'}
+                    fw={'100'}
+                    style={{
+                      color: showPrice ? '#ac9e9e' : apple.change.startsWith('+') ? 'green' : 'red',
+                    }}
                   >
-                    {apple.change}
+                    {showPrice ? apple.price : apple.change}
                   </Text>
                 </div>
               </div>
