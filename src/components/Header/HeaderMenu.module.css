@@ -16,7 +16,7 @@
 
   @media (max-width: 1349px) {
     padding: 0px 50px 0px 50px;
-  }
+}
 }
 .hidden {
   display: none;
@@ -73,9 +73,7 @@
 }
 
 .butt {
-  transition:
-    transform 0.2s ease-in-out,
-    background-color 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .butt:hover {
@@ -159,6 +157,7 @@
   text-decoration: none;
 }
 
+
 .searchButton {
   background-color: #1f1f1f; /* Light background color */
   border: 1px solid #424242; /* Border color */
@@ -170,15 +169,14 @@
   border-radius: 10px; /* Rounded corners */
   width: 300px;
   height: auto;
-}
-.searchButton:hover {
+}.searchButton:hover{
   background-color: #424242;
 }
 .searchContent {
   display: flex;
   align-items: center;
 }
-.searchIcon {
+.searchIcon{
   color: #828282;
 }
 .searchText {
@@ -206,98 +204,119 @@
     width: 150px;
     height: auto; /* or specify a height if needed */
   }
-  .butt {
-    width: 110px;
-    height: 38px;
-    font-size: 12px;
-  }
+    .butt{
+      width: 110px;
+      height: 38px;
+      font-size: 12px;
+    }
+
+
 }
 
+
+
+
 @media screen and (max-width: 1253px) {
-  .link {
+
+  .link{
     font-size: 14px;
   }
   .linkLabel {
     font-size: 14px;
+
   }
 }
 
 @media screen and (max-width: 1253px) {
-  .right {
+  .right{
     padding-left: 50px;
   }
+
+
+
+
 }
+
 
 @media screen and (max-width: 975px) {
-  .butt {
-    display: none;
-  }
+    .butt{
+      display: none;
+    }
 
-  .link {
-    font-size: 15px;
-    padding-left: 10px;
-  }
-  .linkLabel {
-    font-size: 15px;
-    padding-left: 20px;
-  }
-  .right {
-    translate: 0px;
-    width: 135px;
-  }
+    .link{
+      font-size: 15px;
+      padding-left: 10px;
+
+    }
+    .linkLabel {
+      font-size: 15px;
+      padding-left: 20px;
+
+    }
+    .right{
+      translate: 0px;
+      width: 135px;
+    }
 }
 @media screen and (max-width: 870px) {
-  .link {
+  .link{
     font-size: 15px;
     padding-left: 1px;
+
   }
   .linkLabel {
     font-size: 15px;
     padding-left: 0px;
+
   }
 }
 @media screen and (max-width: 767px) {
-  .right {
+
+  .right{
     translate: 110px;
     width: 135px;
   }
 }
 @media screen and (max-width: 737px) {
-  .right {
-    display: none;
-  }
+
+  .right{
+    display: none;  }
 }
+
 
 @media (max-width: 1353px) {
   .scrolled .right {
     display: none;
   }
+
 }
 
 @media (max-width: 870px) {
-  .searchButton {
-    width: 240px;
-  }
-  .searchRight {
-    translate: 30px;
-  }
-  .shortut {
-    translate: -40px;
-  }
+.searchButton{
+  width: 240px;
+}
+.searchRight{
+  translate: 30px;
+}
+.shortut{
+  translate: -40px;
+}
 }
 
 @media (max-width: 768px) {
-  .searchButton {
-    display: none;
+  .searchButton{
+     display: none;
   }
-}
+  }
 
-.customDrawer {
-  /* Hide the scrollbar */
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer and Edge */
-}
 
-.customDrawer::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Opera */
-}
+
+  .customDrawer {
+    /* Hide the scrollbar */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  }
+  
+  .customDrawer::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }

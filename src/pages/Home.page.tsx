@@ -24,10 +24,10 @@ export function HomePage() {
       <Wave />
       <FeaturesCards />
       <Waves />
-      <Slider/>
-      <Install/>
       <Work/>
-      <Doc/>
+      <Install/>
+      <Slider/>
+
       <Blur/>
 
       <FooterLinks />

@@ -9,6 +9,8 @@ const Slider = () => {
     'shield.svg',
     'tandov.svg',
     'tree.svg',
+    'µ.svg',
+    'tradingview.svg'
   ];
 
   return (
@@ -16,7 +18,7 @@ const Slider = () => {
       <main>
         <div
           className="slider"
-          style={{ '--width': '400px', '--height': '200px', '--quantity': '6' }}
+          style={{ '--width': '400px', '--height': '200px', '--quantity': '8'}}
         >
           <div className="list">
             {sliderData1.map((img, index) => (
