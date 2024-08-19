@@ -199,7 +199,7 @@ export function HeaderMenu() {
               Get Started
             </Button>
           </div>
-          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" onClick={open} />
+          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm"/>
         </div>
       </Container>
       <Drawer opened={drawerOpened} onClose={close} title="Menu">
@@ -210,7 +210,7 @@ export function HeaderMenu() {
                 {link.label}
               </a>
               {link.links && (
-                <Stack spacing="xs">
+                <Stack>
                   {link.links.map((sublink) => (
                     <a key={sublink.link} href={sublink.link} className={classes.drawerSublink}>
                       {sublink.label}
