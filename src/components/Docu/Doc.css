@@ -66,6 +66,7 @@
 
 
 
+
 @keyframes autoRotateAnimation {
   from {
     transform: rotate(0deg);
@@ -75,7 +76,7 @@
   }
 }
 
-.autoShow {
+.auto {
   margin-top: 0px;
   animation: autoShowAnimation both;
   animation-timeline: view(70% 5%);

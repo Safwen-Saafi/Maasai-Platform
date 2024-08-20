@@ -2,6 +2,7 @@ import AboutComponent from '@/components/About/AboutComponent';
 import Blur from '@/components/Blurred/Blur';
 import { GetInTouch } from '@/components/ContactUs/GetInTouch';
 import Doc from '@/components/Docu/Doc';
+import EconomiccalendarComponent from '@/components/EconomicCalendar/EconomiccalendarComponent';
 import { FeaturesCards } from '@/components/Features/FeaturesCard';
 import { FooterLinks } from '@/components/Footer/FooterLinks';
 import { HeaderMenu } from '@/components/Header/HeaderMenu';
@@ -28,6 +29,7 @@ export function HomePage() {
       <Waves />
       <Work/>
       <Doc/>
+      <Wave4/>
       <Prop/>
       <Install/>
       <Slider/>
