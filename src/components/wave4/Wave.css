@@ -1,0 +1,8 @@
+/* Wave.css */
+.wave-image {
+  background-color: #141111;
+    width: 100%;
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove any extra space below the image */
+  }
+  
