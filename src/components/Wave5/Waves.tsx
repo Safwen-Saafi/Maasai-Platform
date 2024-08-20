@@ -1,11 +1,11 @@
-import waveImage from './wave4.png'; // Import the PNG image
+import waveImage from './wave5.png'; // Import the PNG image
 import './Wave.css';
 
-const Wave5 = () => {
+const Wave4 = () => {
   return (
 
       <img src={waveImage} alt="Wave" className="wave-image" />
   );
 };
 
-export default Wave5;
+export default Wave4;
