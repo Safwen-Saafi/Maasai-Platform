@@ -1,0 +1,119 @@
+.center-container {
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+  height: 40vh; /* Full viewport height, adjust as needed */
+}
+
+.ts {
+  background-color: black;
+}
+
+.tsu {
+  background-color: black;
+  width: min(1400px, 90vw);
+  margin: auto;
+  padding: 20px;
+}
+
+.grid-2 {
+  --row: 8;
+  font-size: 1.7em;
+}
+
+.grid-2 div:nth-child(1) {
+  grid-column: 1 / 4;
+  grid-row: 3;
+}
+
+.grid-2 div:nth-child(2) {
+  grid-column: 4 / 7;
+  grid-row: 1;
+}
+
+.grid-2 div:nth-child(3) {
+  grid-column: 4 / 7;
+  grid-row: 4;
+}
+
+.grid-2 div:nth-child(4) {
+  grid-column: 1 / 4;
+  grid-row: 6;
+}
+
+@media screen and (max-width: 1023px) {
+  header img {
+    height: 2em;
+  }
+
+  .banner .content h1 {
+    font-size: 12em;
+  }
+
+  .banner .content .right {
+    transform: none;
+  }
+
+  .grid-2 div:nth-child(1) {
+    grid-row: 2;
+  }
+
+  .grid-2 div:nth-child(3) {
+    grid-row: 6;
+  }
+
+  .grid-2 div:nth-child(4) {
+    grid-row: 5;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .grid {
+    display: block;
+  }
+}
+
+.autoRotate {
+  animation: autoRotateAnimation;
+  animation-timeline: view();
+}
+
+@keyframes autoRotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.autoShow {
+  margin-top: 0px;
+  animation: autoShowAnimation both;
+  animation-timeline: view(70% 5%);
+}
+
+@keyframes autoShowAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(200px) scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.highliht {
+  position: relative;
+  background-color: rgba(53, 168, 0, 0.3);
+  border-radius: 40px 60px 15px 60px;
+  padding: rem(4px) rem(12px);
+}
+
+.highlit {
+  position: relative;
+  background-color: rgba(255, 16, 16, 0.3);
+  border-radius: 40px 60px 15px 60px;
+  padding: rem(4px) rem(12px);
+}

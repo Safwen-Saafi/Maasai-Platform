@@ -23,4 +23,27 @@
   .menuItem:hover {
     background-color: #424242; /* Background color on hover */
   }
+
+
+
+  @media screen and (max-width: 1125px) {
+    .logo {
+      width: 150px;
+      height: auto; /* or specify a height if needed */
+    }
+  
+  
+  
+  }
+  
+  
+  @media screen and (max-width: 1125px) {
+    .ava {
+      width: 37px;
+      height: 37px;
+    }
+  
+  
+  
+  }
   

@@ -37,3 +37,25 @@
     background-color: #1f1f1f;
     border: #141516;
   }
+
+  @media screen and (max-width: 1125px) {
+    .control {
+      width: 70px;
+      height: 40px;
+      padding: var(--mantine-spacing-xs) var(--mantine-spacing-xs);
+    }
+  }
+  
+  
+  @media screen and (max-width: 1024px) {
+    .control {
+      width: 70px;
+      height: 40px;
+      padding: var(--mantine-spacing-xs) var(--mantine-spacing-xs);
+    }
+    .contro{
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
