@@ -2,8 +2,8 @@ import './Blur.css';
 
 const Blur = () => {
   return (
-    <div className="ts">
-      <main className="tsu">
+    <div className="outer">
+      <main className="inner">
         <section className="grid grid-3">
           <div className="autoBLur">TRADE</div>
           <div className="autoBLur">WISELY</div>
