@@ -1,8 +1,8 @@
-.ts {
+.outer {
   background-color: black;
 }
 
-.tsu {
+.inner {
   background-color: black;
   width: min(1400px, 90vw);
   margin: auto;

@@ -1,7 +1,8 @@
 import { Text, Container, ActionIcon, Group, rem } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
-import { MantineLogo } from '@mantinex/mantine-logo';
+import { IconBrandX, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
 import classes from './FooterLinks.module.css';
+import logo from './logo.png';
+
 
 const data = [
   {
@@ -26,7 +27,7 @@ const data = [
     title: 'Community',
     links: [
       { label: 'Join Discord', link: '#' },
-      { label: 'Follow on Twitter', link: '#' },
+      { label: 'Follow on X', link: '#' },
       { label: 'Email newsletter', link: '#' },
       { label: 'GitHub discussions', link: '#' },
     ],
@@ -59,21 +60,21 @@ export function FooterLinks() {
     <footer className={classes.footer}>
       <Container className={classes.inner} size={'lg'}>
         <div className={classes.logo}>
-          <MantineLogo size={30} />
+        <img src={logo} alt="Logo" className={classes.logo} />
           <Text size="xs" c="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
+              Your daily trading platform 
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
       <Container className={classes.afterFooter} size={'lg'}>
         <Text c="dimmed" size="sm">
-          © 2020 mantine.dev. All rights reserved.
+          © 2024 Maasai Platform. All rights reserved.
         </Text>
 
         <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandTwitter style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+            <IconBrandX style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
             <IconBrandYoutube style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
