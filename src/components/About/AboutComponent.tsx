@@ -4,7 +4,7 @@ import about_bg from './about_bg.png';
 
 function AboutComponent() {
     return (
-        <section className={styles.about_us} style={{ backgroundImage: `url(${about_bg})`, height: '100vh', width: '100vw' }}>
+        <div className={styles.about_us} style={{ backgroundImage: `url(${about_bg})`, height: '100vh', width: '100vw' }}>
             <div className={styles.about}>
                 <h1>
                     <span className={styles.who}>WHO WE </span><span className={styles.are}>ARE</span>
@@ -18,7 +18,7 @@ function AboutComponent() {
                     customer service and personalized solutions to meet every trader's needs.
                 </p>
             </div>
-        </section>
+        </div>
     );
 }
 

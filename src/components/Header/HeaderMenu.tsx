@@ -20,6 +20,7 @@ import { spotlight, Spotlight } from '@mantine/spotlight'; // Import Spotlight
 import logo from './logo.png';
 import { IconHome, IconDashboard, IconFileText } from '@tabler/icons-react';
 import { SpotlightActionData } from '@mantine/spotlight';
+import { Link } from 'react-router-dom';
 
 const actions: SpotlightActionData[] = [
   {
@@ -81,7 +82,7 @@ const links = [
       { link: '/forums', label: 'Z Score' },
     ],
   },
-  { link: '/about', label: 'News' },
+  { link: '/news', label: 'News' },
   { link: '/about', label: 'About' },
 ];
 
@@ -126,28 +127,27 @@ export function HeaderMenu() {
           </Menu>
         );
       }
-
+  
       return (
         <Menu.Item key={item.link} className={classes.menuItem}>
           {item.label}
         </Menu.Item>
       );
     });
-
+  
     if (menuItems) {
       return (
         <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
           <Menu.Target>
-            <a
-              href={link.link}
+            <Link
+              to={link.link}
               className={classes.link}
-              onClick={(event) => event.preventDefault()}
             >
               <Center>
                 <span className={classes.linkLabel}>{link.label}</span>
                 <IconChevronDown size="0.9rem" stroke={1.9} />
               </Center>
-            </a>
+            </Link>
           </Menu.Target>
           <Menu.Dropdown className={classes.menuDropdown}>{menuItems}</Menu.Dropdown>
         </Menu>
@@ -155,14 +155,13 @@ export function HeaderMenu() {
     }
 
     return (
-      <a
+      <Link
         key={link.label}
-        href={link.link}
+        to={link.link}
         className={classes.link}
-        onClick={(event) => event.preventDefault()}
       >
         {link.label}
-      </a>
+      </Link>
     );
   });
 
@@ -170,7 +169,9 @@ export function HeaderMenu() {
     <header className={`${classes.header} ${scrolled ? classes.scrolled : ''}`}>
       <Container size="xl">
         <div className={classes.inner}>
-          <img src={logo} alt="Logo" className={classes.logo} />
+          <Link to="/">
+            <img src={logo} alt="Logo" className={classes.logo} />
+          </Link>
           <Group gap={-20} visibleFrom="sm" className={scrolled ? classes.hidden : ''}>
             {items}
           </Group>
@@ -193,6 +194,8 @@ export function HeaderMenu() {
               variant="gradient"
               gradient={{ from: 'yellow', to: 'red', deg: 150 }}
               className={classes.butt}
+              component={Link}
+              to="/sign" // This will navigate to the About page
             >
               Get Started
             </Button>

@@ -54,6 +54,7 @@
 }
 
 .logo {
+  padding-top: 5px;
   width: 180px;
   height: auto; /* or specify a height if needed */
 }
