@@ -13,8 +13,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
 
+  @media (max-width: 1349px) {
+    padding: 0px 50px 0px 50px;
+}
+}
 .hidden {
   display: none;
 }
@@ -51,6 +54,7 @@
 }
 
 .logo {
+  padding-top: 5px;
   width: 180px;
   height: auto; /* or specify a height if needed */
 }
@@ -161,7 +165,7 @@
   padding: 10px 20px 10px 10px; /* Padding around text */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 13px; /* Font size */
   border-radius: 10px; /* Rounded corners */
   width: 300px;
@@ -182,7 +186,7 @@
   margin-right: auto; /* Push "ctrl + k" to the right */
 }
 
-.shortcut {
+.shortut {
   background-color: #000; /* Black background for shortcut */
   color: #c9c9c9; /* White text color */
   border-radius: 5px; /* Rounded corners */
@@ -190,3 +194,130 @@
   font-size: 12px; /* Font size for shortcut */
   margin-left: 100px;
 }
+
+.searchRight {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Space between icon and text */
+}
+@media screen and (max-width: 1125px) {
+  .logo {
+    width: 150px;
+    height: auto; /* or specify a height if needed */
+  }
+    .butt{
+      width: 110px;
+      height: 38px;
+      font-size: 12px;
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width: 1253px) {
+
+  .link{
+    font-size: 14px;
+  }
+  .linkLabel {
+    font-size: 14px;
+
+  }
+}
+
+@media screen and (max-width: 1253px) {
+  .right{
+    padding-left: 50px;
+  }
+
+
+
+
+}
+
+
+@media screen and (max-width: 975px) {
+    .butt{
+      display: none;
+    }
+
+    .link{
+      font-size: 15px;
+      padding-left: 10px;
+
+    }
+    .linkLabel {
+      font-size: 15px;
+      padding-left: 20px;
+
+    }
+    .right{
+      translate: 0px;
+      width: 135px;
+    }
+}
+@media screen and (max-width: 870px) {
+  .link{
+    font-size: 15px;
+    padding-left: 1px;
+
+  }
+  .linkLabel {
+    font-size: 15px;
+    padding-left: 0px;
+
+  }
+}
+@media screen and (max-width: 767px) {
+
+  .right{
+    translate: 110px;
+    width: 135px;
+  }
+}
+@media screen and (max-width: 737px) {
+
+  .right{
+    display: none;  }
+}
+
+
+@media (max-width: 1353px) {
+  .scrolled .right {
+    display: none;
+  }
+
+}
+
+@media (max-width: 870px) {
+.searchButton{
+  width: 240px;
+}
+.searchRight{
+  translate: 30px;
+}
+.shortut{
+  translate: -40px;
+}
+}
+
+@media (max-width: 768px) {
+  .searchButton{
+     display: none;
+  }
+  }
+
+
+
+  .customDrawer {
+    /* Hide the scrollbar */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  }
+  
+  .customDrawer::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }

@@ -36,8 +36,6 @@ export function HomePage() {
       <Install/>
       <Slider/>
       <Blur/>
-      <SmartforexscreenComponent/>
-
       <FooterLinks />
     </>
   );
