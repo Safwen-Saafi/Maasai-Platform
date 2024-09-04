@@ -5,12 +5,22 @@ import { NewsPage } from './pages/News.page';
 import { AboutPage } from './pages/About.Page';
 import { LiveChartPage } from './pages/LiveChart.page';
 import { SmartPage } from './pages/Smart.page';
+import { EconomicPage } from './pages/Economic.page';
+import { CurrencyPage } from './Currency.page';
 
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />,
+  },
+  {
+    path: '/currency',
+    element: <CurrencyPage />,
+  },
+  {
+    path: '/calendar',
+    element: <EconomicPage />,
   },
   {
     path: '/sign',

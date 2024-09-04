@@ -1,9 +1,9 @@
 .title {
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
   font-size: 2rem; /* Larger title for prominence */
   font-weight: bold; /* Bold title for emphasis */
   padding: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .title .economic {
@@ -14,11 +14,19 @@
   color: #91C43B; /* Green color for CALENDAR */
 }
 .economicCalendarContainer {
-  background-color: #1a1d22; /* Background color */
+  margin-top: -29px;
+  background-color: #000000; /* Background color */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the content horizontally */
+  justify-content: center;
+  width: 100%; /* Full width of the parent container */
+  padding: 20px;
 }
 /* EconomiccalendarComponent.module.css */
-.tradingViewScreenerWidget {
-  height: 450px; /* Set the desired height here */
-  background-color: #1a1d22; /* Ensure background color matches your theme */
-  border: 1px solid #eee; /* Optional: border style for better visibility */
+.economicCalendarWidget {
+  width: 95%; /* Set width to control the size of the widget */
+  max-width: 1500px; /* Max width to prevent excessive stretching on large screens */
+  height: 450px;
+  padding-left: 150px;
 }

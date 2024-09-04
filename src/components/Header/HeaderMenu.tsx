@@ -68,18 +68,9 @@ const links = [
     link: '#3',
     label: 'Strategy',
     links: [
-      { link: '/faq', label: 'Sentiments' },
-      { link: '/demo', label: 'Market Structure' },
-      {
-        link: '/forums',
-        label: 'Relative Value',
-        subLinks: [
-          { link: '/sub1', label: 'Sub Item 1' },
-          { link: '/sub2', label: 'Sub Item 2' },
-        ],
-      },
-      { link: '/forums', label: 'Initial Range' },
+      { link: '/currency', label: 'Live Currency' },
       { link: '/forexscreen', label: 'SmartForex Screen' },
+      { link: '/calendar', label: 'Economic Calendar' },
     ],
   },
   { link: '/news', label: 'News' },
@@ -102,13 +93,9 @@ export function HeaderMenu() {
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => {
       const subMenuItems = item.subLinks?.map((subItem) => (
-        <Menu.Item key={subItem.link} className={classes.menuItem}>
-          <Link to={subItem.link} className={classes.link}>
-            {subItem.label}
-          </Link>
-        </Menu.Item>
+        <Menu.Item key={subItem.link} className={classes.menuItem}></Menu.Item>
       ));
-  
+
       if (subMenuItems) {
         return (
           <Menu key={item.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
@@ -128,7 +115,7 @@ export function HeaderMenu() {
           </Menu>
         );
       }
-  
+
       return (
         <Menu.Item key={item.link} className={classes.menuItem}>
           <Link to={item.link} className={classes.link}>
@@ -137,7 +124,7 @@ export function HeaderMenu() {
         </Menu.Item>
       );
     });
-  
+
     if (menuItems) {
       return (
         <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
@@ -153,7 +140,7 @@ export function HeaderMenu() {
         </Menu>
       );
     }
-  
+
     return (
       <Link key={link.label} to={link.link} className={classes.link}>
         {link.label}
