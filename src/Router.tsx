@@ -7,12 +7,17 @@ import { LiveChartPage } from './pages/LiveChart.page';
 import { SmartPage } from './pages/Smart.page';
 import { EconomicPage } from './pages/Economic.page';
 import { CurrencyPage } from './Currency.page';
+import { UserPage } from './pages/User.page';
 
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />,
+  },
+  {
+    path: '/user',
+    element: <UserPage />,
   },
   {
     path: '/currency',

@@ -1,0 +1,96 @@
+.profileContainer {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #000000; /* Black background */
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profileHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profileImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer; /* Indicates that the image is clickable */
+    border: 2px solid #ff5722; /* Orange border color */
+}
+
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.changePasswordButton {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: linear-gradient(45deg, #ff5722, #e91e63); /* Gradient from orange to red */
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid #e91e63; /* Red border color */
+}
+
+.profileDetails {
+    margin-bottom: 20px;
+}
+
+.profileRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.profileField {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.profileField label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profileField span {
+    padding: 8px 12px;
+    background-color: #444;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid #ff5722; /* Orange border color */
+}
+
+.profileField input {
+    padding: 8px 12px;
+    border: 2px solid #ff5722; /* Orange border color */
+    border-radius: 4px;
+    background-color: #444;
+    color: #fff;
+}
+
+.profileActions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.saveButton {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff5722, #e91e63); /* Gradient from orange to red */
+    border: 2px solid #e91e63; /* Red border color */
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}

@@ -9,19 +9,23 @@ import {
 } from '@mantine/core';
 import {
   IconLogout,
-  IconHeart,
-  IconStar,
-  IconMessage,
   IconSettings,
   IconSwitchHorizontal,
   IconChevronRight,
   IconTrash
 } from '@tabler/icons-react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import classes from './UserMenu.module.css';
 
 export function UserMenu() {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleAccountSettingsClick = () => {
+    navigate('/user'); // Navigate to the /user page
+    setOpened(false); // Close the menu
+  };
 
   return (
     <Group justify="center">
@@ -73,6 +77,7 @@ export function UserMenu() {
           <Menu.Item
             leftSection={<IconSettings style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}
             className={classes.menuItem}
+            onClick={handleAccountSettingsClick} // Add onClick handler
           >
             Account settings
           </Menu.Item>
