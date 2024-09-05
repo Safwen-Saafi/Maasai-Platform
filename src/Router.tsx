@@ -8,6 +8,7 @@ import { SmartPage } from './pages/Smart.page';
 import { EconomicPage } from './pages/Economic.page';
 import { CurrencyPage } from './Currency.page';
 import { UserPage } from './pages/User.page';
+import { AuthenticationForm } from './components/SignUp/AuthenticationForm';
 
 
 const router = createBrowserRouter([
@@ -28,10 +29,9 @@ const router = createBrowserRouter([
     element: <EconomicPage />,
   },
   {
-    path: '/sign',
-    element: <SignPage />, // Route to About Page
-  },
-  {
+    path: '/auth',
+    element: <AuthenticationForm />,
+  }, {
     path: '/news',
     element: <NewsPage />, // Route to About Page
   },
