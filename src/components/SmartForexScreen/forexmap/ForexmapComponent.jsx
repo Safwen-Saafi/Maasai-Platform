@@ -3,11 +3,13 @@ import styles from './ForexmapComponent.module.css';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
 
 const markers = [
-    { name: "London", coordinates: [-0.1276, 51.5074], timezone: "Europe/London", open: "08:00", close: "16:30" },
-    { name: "New York", coordinates: [-74.0060, 40.7128], timezone: "America/New_York", open: "09:30", close: "16:00" },
-    { name: "Sydney", coordinates: [151.2093, -33.8688], timezone: "Australia/Sydney", open: "10:00", close: "16:00" },
-    { name: "Tokyo", coordinates: [139.6917, 35.6895], timezone: "Asia/Tokyo", open: "09:00", close: "15:00" },
-];
+        { name: "London", coordinates: [-0.1276, 51.5074], timezone: "Europe/London", open: "08:00", close: "16:30" },
+        { name: "New York", coordinates: [-74.0060, 40.7128], timezone: "America/New_York", open: "09:30", close: "16:00" },
+        { name: "Sydney", coordinates: [151.2093, -33.8688], timezone: "Australia/Sydney", open: "10:00", close: "16:00" },
+        { name: "Tokyo", coordinates: [139.6917, 35.6895], timezone: "Asia/Tokyo", open: "09:00", close: "15:00" },
+        { name: "Chicago", coordinates: [-87.6298, 41.8781], timezone: "America/Chicago", open: "08:30", close: "15:00" },  // Chicago market
+        { name: "Frankfurt", coordinates: [8.6821, 50.1109], timezone: "Europe/Berlin", open: "09:00", close: "17:30" },  // Frankfurt market
+    ];
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-50m.json";
 

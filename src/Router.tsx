@@ -13,7 +13,7 @@ import { AuthenticationForm } from './components/SignUp/AuthenticationForm';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/home',
     element: <HomePage />,
   },
   {
